@@ -52,5 +52,5 @@ object tipa{
 	
 	method recibirAtaque(potencia){}
 
-	method recibirTrabajo(){}	
+	method recibirTrabajo(){altura+=1}	
 }

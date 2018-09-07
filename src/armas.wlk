@@ -1,5 +1,5 @@
 object ballesta{
-	var flechas=10
+	var property flechas=10 
 
 	var usoDeArma=0
 	method usoDeArma(){ return usoDeArma}
@@ -11,9 +11,14 @@ object ballesta{
 			usoDeArma+=1
 			flechas-=1
 			}
-		}
+	}
+	
+	method estaCargada(){return flechas>0}	
+	
+}
 		
-		}
+	
+		
 object jabalina{
 	var usoDeArma=0
 	var usoDisponible=1
@@ -22,9 +27,10 @@ object jabalina{
 	
 	method registrarUso(){
 		
-		if(usoDisponible= 1){
-			usoDeArma+=1
+		    usoDeArma+=1
+		    
 			usoDisponible-=1
 		}
-	}
+		
+	method estaCargada(){return usoDisponible >= 1}	
 }

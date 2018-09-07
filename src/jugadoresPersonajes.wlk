@@ -2,7 +2,8 @@ import armas.*
 import elementos.*
 
 object luisa {
-	var personajeActivo = noHayPersonaje
+	var property personajeActivo = noHayPersonaje
+	method aparecer(elemento){ personajeActivo.encontrar(elemento)}
 }
 
 
@@ -19,16 +20,16 @@ object floki {
 
 
 object mario {
-	var valorRecolectado = 0
-	var alturaUltimoElemento=0
+	var property valorRecolectado = 0
+	var ultimoElemento
 	method encontrar(elemento) {
 	    valorRecolectado += elemento.valorQueOtorga()
 	    elemento.recibirTrabajo()
-	    alturaUltimoElemento=elemento.altura()
+	    ultimoElemento=elemento
 	    // ... acá hay que agregar una línea ...
 	}
-	method marioEstaFeliz(){
-		return valorRecolectado <= 50 || alturaUltimoElemento > 10
+	method estaFeliz(){
+		return valorRecolectado >= 50 || ultimoElemento.altura() > 10
 	}
 }
 
